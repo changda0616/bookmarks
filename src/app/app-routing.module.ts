@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: 'ppl-list', loadChildren: './ppl-list/ppl-list.module#PplListModule' },
+  { path: 'ppl-list', loadChildren: () => import('./ppl-list/ppl-list.module').then(m => m.PplListModule) },
   { path: '', redirectTo: 'ppl-list', pathMatch: 'full' },
   { path: '**', redirectTo: 'ppl-list'}
 
